@@ -29,16 +29,16 @@ d3.select("body")
 
 // Load Data from csv
 
-d3.csv("assets/data/data.csv", function(error, csvData) {
-    if (error) throw error;
+d3.csv("assets/data/data.csv").then(function(csvData) {
+
 
     // console.log(csvData);
 
     // Turn numbers into integers
     
     csvData.forEach(function(d) {
-        data.poverty = +data.poverty;
-        data.healthcare = +data.healthcare;
+        d.poverty = +d.poverty;
+        d.healthcare = +d.healthcare;
     });
 
     // Scaling the x and y axes
